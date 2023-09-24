@@ -19,70 +19,6 @@ public class Main {
         Vertex J = new Vertex("J");
         Vertex K = new Vertex("K");
 
-        /*Vertex EWR = new Vertex("EWR");
-        Vertex SIN = new Vertex("SIN");
-        Vertex TLV = new Vertex("TLV");
-        Vertex HND = new Vertex("HND");
-        Vertex ICN = new Vertex("ICN");
-        Vertex JFK= new Vertex( "JFK");
-        Vertex DEL = new Vertex("DEL");
-        Vertex LGA = new Vertex("LGA");
-        Vertex DOH = new Vertex("DOH");
-        Vertex CDG = new Vertex("CDG");
-        Vertex SAN = new Vertex("SAN");
-        Vertex BUD = new Vertex("BUD");
-        Vertex EYW = new Vertex("EYW");
-        Vertex LHM = new Vertex("LHM");
-        Vertex LHR = new Vertex("LHR");
-        Vertex DSM = new Vertex("DSM");
-        Vertex SFO = new Vertex("SFO");
-        Vertex ORD = new Vertex("ORD");
-        Vertex BGI = new Vertex("BGI");
-
-        List<Vertex> newVertexList = new ArrayList<>();
-        List<Edge> newEdgeList = new ArrayList<>();
-        Graph newGraph = new Graph(newVertexList,newEdgeList);
-        newGraph.addVertex(EWR);
-        newGraph.addVertex(SIN);
-        newGraph.addVertex(TLV);
-        newGraph.addVertex(HND);
-        newGraph.addVertex(SAN);
-        newGraph.addVertex(BUD);
-        newGraph.addVertex(EYW);
-        newGraph.addVertex(ICN);
-        newGraph.addVertex(LHM);
-        newGraph.addVertex(BGI);
-        newGraph.addVertex(JFK);
-        newGraph.addVertex(DEL);
-        newGraph.addVertex(LHR);
-        newGraph.addVertex(ORD);
-        newGraph.addVertex(SFO);
-        newGraph.addVertex(DSM);
-        newGraph.addVertex(CDG);
-        newGraph.addVertex(DOH);
-        newGraph.addVertex(LGA);
-
-        newGraph.addDirectedEdge(EWR,HND,1);
-        newGraph.addDirectedEdge(HND,ICN,2);
-        newGraph.addDirectedEdge(ICN,JFK,2);
-        newGraph.addDirectedEdge(HND,JFK,1);
-        newGraph.addDirectedEdge(JFK,LGA,1);
-        newGraph.addDirectedEdge(DSM,ORD,2);
-        newGraph.addDirectedEdge(ORD,BGI,2);
-        newGraph.addDirectedEdge(SFO,DSM,1);
-        newGraph.addDirectedEdge(LHR,SFO,1);
-        newGraph.addDirectedEdge(EYW,LHR,2);
-        newGraph.addDirectedEdge(SAN,EYW,2);
-        newGraph.addDirectedEdge(SFO,SAN,1);
-        newGraph.addDirectedEdge(DEL,DOH,1);
-        newGraph.addDirectedEdge(DEL,CDG,2);
-        newGraph.addDirectedEdge(CDG,BUD,2);
-        newGraph.addDirectedEdge(CDG,SIN,1);
-        newGraph.addDirectedEdge(SIN,CDG,1);
-        newGraph.addDirectedEdge(DEL,TLV,2);*/
-
-
-
         List<Vertex> vertexList = new ArrayList<>();
         List<Edge> edgesList = new ArrayList<>();
         Graph graph = new Graph(vertexList, edgesList);
@@ -164,14 +100,11 @@ public class Main {
         graph.addUndirectedEdge(I, K, 5);
         graph.addUndirectedEdge(J, K, 4);
 
-
-        //System.out.println(newGraph.minEdgesForSpanningTree(19));
         System.out.println("NN heuristic result :");
         List<Vertex> initialSolution = graph.solveTsp(vertexList);
         double minimumDistance = graph.getDistanceFromOrdering(initialSolution);
         System.out.println("minimum distance is " + minimumDistance);
         System.out.println();
-
 
         int start = 0;
         int end = initialSolution.size() -1;
