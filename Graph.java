@@ -100,8 +100,7 @@ public class Graph {
         target.addNeighbour(source,edge);
     }
 
-    public List<Vertex> solveTsp(List<Vertex> vertexList){
-
+    public List<Vertex> solveTsp(List<Vertex> vertexList) {
         Vertex clonedStartingVertex;
         List<Vertex> vertices = new ArrayList<>();
 
@@ -113,20 +112,20 @@ public class Graph {
         Queue<Vertex> queue = new LinkedList<>();
         queue.add(startingVertex);
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Vertex current = queue.remove();
-            if(!vertices.contains(current)) {
+            if (!vertices.contains(current)) {
                 vertices.add(current);
             }
 
             double minEdgeDistance = Double.POSITIVE_INFINITY;
             Vertex closestNeighbour = null;
 
-            for(Vertex neighbour : current.getNeighbours()) {
+            for (Vertex neighbour : current.getNeighbours()) {
                 if (!neighbour.isVisited()) {
-                    double minEdgeDistanceForV = getMinEdge(neighbour.getEdges());
-                    if (minEdgeDistanceForV < minEdgeDistance) {
-                        minEdgeDistance = minEdgeDistanceForV;
+                    double edgeDistance = getDistanceBetweenVertices(current, neighbour);
+                    if (edgeDistance < minEdgeDistance) {
+                        minEdgeDistance = edgeDistance;
                         closestNeighbour = neighbour;
                     }
                 }
@@ -140,7 +139,6 @@ public class Graph {
                     vertices.add(closestNeighbour);
                 }
             }
-
         }
         vertices.add(clonedStartingVertex);
         printOrderingOfVertices(vertices);
